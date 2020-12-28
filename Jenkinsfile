@@ -11,7 +11,7 @@ pipeline {
                 script {                        
                     commit_id = readFile('.git/commit-id').trim()
                 }
-                echo ${commit_id}
+                echo 'stage préparation complete'
             }
         }
         
@@ -27,6 +27,7 @@ pipeline {
                archiveArtifacts artifacts: '/target/**/*'
             }
         }
+            echo 'stage préparation complete'
         }
 
         stage ('Testing Stage') {
